@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    const log = console.log;
+
+    log('Arr -------------');
+    const arr = [1,2,3];
+    let iterator = arr[Symbol.iterator]();
+    log(iterator.next());
+    log(iterator.next());
+    log(iterator.next());
+    log(iterator.next());
+
+    for (const a of arr) log(a);
+
+    log('Set -------------');
+    const set = new Set([1,2,3]);
+    for (const a of set) log (a);
+
+    log('Map -------------');
+    const map = new Map([['a', 1], ['b', 2], ['c', 3]]);
+    for (const a of map) log (a);
+    for (const a of map.keys()) log(a);
+    for (const a of map.values()) log(a);
+    for (const a of map.entries()) log(a);
+</script>
+</body>
+</html>
