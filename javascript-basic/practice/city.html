@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    이름 :
+    <input id="name" type="text"/>
+</div>
+<div>
+    <select id="city" onchange="changeRegion()">
+        <option value="02">
+            서울
+        </option>
+        <option value="064">
+            제주
+        </option>
+    </select>
+</div>
+<div>
+    <select id="region_02">
+        <option>
+            서초
+        </option>
+        <option>
+            강남
+        </option>
+    </select>
+</div>
+<div>
+    <select id="region_064">
+        <option>
+            제주시
+        </option>
+        <option>
+            서귀포시
+        </option>
+    </select>
+</div>
+<div>
+    <input type="button" onClick="callName()" value="click">
+</div>
+<script>
+    function callName() {
+        alert(document.getElementById("city").value);
+    }
+
+    function changeRegion() {
+        document.getElementById("region_02").style.display = 'none';
+        document.getElementById("region_064").style.display = 'none';
+        document.getElementById("region_" + document.getElementById("city").value).style.display = '';
+    }
+</script>
+</body>
+</html>
