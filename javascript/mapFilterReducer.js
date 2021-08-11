@@ -29,3 +29,53 @@ log(map(p => p.price, products));
 //     prices.push(product.price);
 // }
 // log(prices);
+
+console.clear();
+
+log([1, 2, 3].map(a => a + 1));
+
+log(map(el => el.nodeName, document.querySelectorAll('*')));
+
+function* gen() {
+    yield 1;
+    yield 2;
+    yield 3;
+}
+
+log(map((a => a * a), gen()));
+
+let m = new Map();
+m.set('a', 10);
+m.set('b', 20);
+
+log(new Map(map(([k, v]) => [k, v * 2], m)));
+
+
+console.clear();
+
+const filter = (f, products) => {
+    let res = [];
+    for (const p of products) {
+        if (f(p)) res.push(p);
+    }
+    return res;
+}
+log(...filter(p => p.price < 20000, products));
+// let under20000 = [];
+// for (const product of products) {
+//     if (product.price < 20000) {
+//         under20000.push(product);
+//     }
+// }
+// log(...under20000);
+
+log(...filter(p => p.price >= 20000, products));
+// let over20000 = [];
+// for (const product of products) {
+//     if (product.price >= 20000) {
+//         over20000.push(product);
+//     }
+// }
+// log(...over20000);
+
+log(filter(n => n % 2, [1, 2, 3, 4, 5, 6]));
