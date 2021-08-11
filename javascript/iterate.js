@@ -29,3 +29,21 @@ log(iter[Symbol.iterator]() === iter);
 for (const number of iter) {
     log(number);
 }
+
+log(document.querySelectorAll('*'));
+for (const a of document.querySelectorAll('*')) {
+    log(a);
+}
+const all = document.querySelectorAll('*');
+const iter2 = all[Symbol.iterator]();
+log(iter2.next());
+log(iter2.next());
+log(iter2.next());
+
+
+// 전개 연산자
+console.clear();
+const a = [1, 2];
+// a[Symbol.iterator] = null;
+log([...a, ...[3,4]]);
+log([a, [3,4]]);
