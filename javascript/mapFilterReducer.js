@@ -91,7 +91,7 @@ for (const number of numbers) {
 log(total);
 
 const reduce = (f, acc, iter) => {
-    if(!iter){
+    if (!iter) {
         iter = acc[Symbol.iterator]();
         acc = iter.next().value;
     }
@@ -106,4 +106,4 @@ log(reduce(add, 0, numbers));
 // 15
 
 log(reduce(add, numbers));
-log(reduce((total_price, product) => total_price + product.price, 0, products))
+log(reduce((total_price, product) => total_price + product.price, 0, products));
