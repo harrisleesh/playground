@@ -107,3 +107,23 @@ log(reduce(add, 0, numbers));
 
 log(reduce(add, numbers));
 log(reduce((total_price, product) => total_price + product.price, 0, products));
+console.clear()
+
+const go = (...args) => reduce((a, f) => f(a), args);
+const pipe = (f, ...fs) => (...as) => go(f(...as), ...fs);
+const curry = f => (a, ..._) => _.length ? f(a, ..._) : (..._) => f(a, ..._);
+go(
+    0,
+    a => a + 1,
+    a => a + 10,
+    a => a + 100,
+    log
+)
+
+const f = pipe(
+    (a, b) => a + b,
+    a => a + 10,
+    a => a + 100,
+)
+
+log(f(0, 1));
