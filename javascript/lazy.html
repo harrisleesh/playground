@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script src="./lib/fx.js"></script>
+</head>
+<body>
+
+<script>
+    const range = l => {
+        let i = -1;
+        let list = [];
+        while (++i < l) {
+            list.push(i);
+        }
+        return list;
+    }
+
+    log(range(5));
+    const li = range(4);
+    log(reduce(add, li));
+
+    const L = [];
+    L.range = function* gen(l) {
+        let i = -1;
+        while (++i < l) {
+            yield i;
+        }
+    }
+    log(L.range(4));
+    log(reduce(add, L.range(4)));
+</script>
+
+<script>
+    function test(name, time, f) {
+        console.time(name);
+        while (time--) f();
+        console.timeEnd(name);
+    }
+
+    test('range', 10, () => reduce(add, range(1000000)));
+    test('L.range', 10, () => reduce(add, L.range(1000000)));
+</script>
+<script>
+    console.clear();
+
+    const take = (l, iter) => {
+        let res = [];
+        for (const a of iter) {
+            res.push(a);
+            if (res.length == l) return res;
+        }
+        return res;
+    }
+    log(take(5, range(100)));
+    log(take(5, L.range(100)));
+</script>
+
+<script>
+    console.clear();
+    L.map = function* (f, iter) {
+        for (const el of iter) yield f(el);
+    }
+    let it = L.map(a => a + 10, [1, 2, 3]);
+    // log(it.next());
+    // log(it.next());
+    // log(it.next());
+    log(...it);
+</script>
+</body>
+</html>

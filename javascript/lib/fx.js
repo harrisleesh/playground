@@ -29,5 +29,5 @@ const reduce = curry((f, acc, iter) => {
 
 const go = (...args) => reduce((a, f) => f(a), args);
 const pipe = (f, ...fs) => (...as) => go(f(...as), ...fs);
-
+const add = (a, b) => a + b;
 log = console.log;
