@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/fx.js"></script>
+</head>
+<body>
+
+<script>
+    // function add10(a, callback) {
+    //     setTimeout(() => callback(a + 10), 200);
+    // }
+    //
+    // var a = add10(5, res =>
+    //     add10(res, res =>
+    //         add10(res, res =>
+    //             add10(res, res =>
+    //                 log(res)))));
+    // // log(a);
+    //
+    // function add20(a) {
+    //     return new Promise(resolve => setTimeout(() => resolve(a + 20), 200));
+    // }
+    //
+    // var b = add20(5)
+    //     .then(add20)
+    //     .then(add20)
+    //     .then(add20)
+    //     .then(log);
+    // log(b);
+    const delay = (a) => new Promise(resolve => setTimeout(() => resolve(a), 100));
+    const go1 = (a, f) => a instanceof Promise ? a.then(f) : f(a);
+    const add5 = (a) => a + 5;
+    const n1 = 10;
+
+    go1(go1(n1, add5), log);
+
+    const n2 = delay(10);
+    go1(go1(n2, add5), log);
+    // log(go1(10, a => a + 10));
+    // log(go1(delay(10), a => a + 10));
+</script>
+</body>
+</html>
