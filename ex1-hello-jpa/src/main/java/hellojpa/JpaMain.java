@@ -21,6 +21,22 @@ public class JpaMain {
             member.setTeam(team);
             em.persist(member);
 
+            em.flush();
+            em.clear();
+
+            Member findMember = em.find(Member.class, member.getId());
+//            Member refMember = em.getReference(Member.class, member.getId());
+//            System.out.println("findAgain : " + findMember.getName());
+            em.flush();
+            em.clear();
+            System.out.println("findAgain : " + findMember.getName());
+//            System.out.println("refMember : " + refMember.getName());
+//            em.flush();
+//            em.clear();
+//            System.out.println("refAgain : " + refMember.getName());
+//            System.out.println("refMember = " + refMember.getClass());
+//            System.out.println("findMember = " + findMember.getClass());
+//            System.out.println("findMember == refMember : " + (refMember == findMember));
             tx.commit();
         }
         catch (Exception e){
