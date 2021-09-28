@@ -32,6 +32,7 @@ public class Atoi {
             } else if (isNotNumber(trimmedString.charAt(0))) {
                 return 0;
             }
+            subString = zeroTrim(subString);
             int lastIndex = subString.length();
             for (int i = 0; i < subString.length(); i++) {
                 char c = subString.charAt(i);
@@ -42,6 +43,9 @@ public class Atoi {
             }
             if (lastIndex == 0) {
                 return 0;
+            }
+            if(lastIndex >10){
+                lastIndex = 10;
             }
             long parseLong = Long.parseLong(subString.substring(0, lastIndex));
             if(minus){
@@ -54,6 +58,19 @@ public class Atoi {
                 parseLong = Integer.MIN_VALUE;
             }
             return (int)parseLong;
+        }
+
+        private String zeroTrim(String subString) {
+            int zeroIndex = 0;
+            for (int i = 0; i < subString.length(); i++) {
+                if(isNotNumber(subString.charAt(i))){
+                    break;
+                }
+                if (subString.charAt(i) == '0') {
+                    zeroIndex = i;
+                }
+            }
+            return subString.substring(zeroIndex);
         }
 
         private boolean isNotNumber(char c) {
