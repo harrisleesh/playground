@@ -24,7 +24,7 @@ public class JpaMain {
             em.flush();
             em.clear();
 
-            Member findMember = em.find(Member.class, member.getId());
+            Member findMember = em.getReference(Member.class, member.getId());
 //            Member refMember = em.getReference(Member.class, member.getId());
 //            System.out.println("findAgain : " + findMember.getName());
             em.flush();
