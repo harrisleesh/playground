@@ -14,6 +14,5 @@ class FpCalculator {
         } else{
             throw IllegalArgumentException()
         }
-
     }
 }
