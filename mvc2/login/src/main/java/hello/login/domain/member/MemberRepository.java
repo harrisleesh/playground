@@ -8,9 +8,8 @@ import java.util.*;
 @Slf4j
 @Repository
 public class MemberRepository {
-
-    private static Map<Long, Member> store = new HashMap<>(); //static 사용
-    private static long sequence = 0L;//static 사용
+    private static Map<Long, Member> store = new HashMap<>();
+    private static long sequence = 0L;
 
     public Member save(Member member) {
         member.setId(++sequence);
@@ -25,15 +24,10 @@ public class MemberRepository {
 
     public Optional<Member> findByLoginId(String loginId) {
         return findAll().stream()
-                .filter(m -> m.getLoginId().equals(loginId))
+                .filter(member -> member.getLoginId().equals(loginId))
                 .findFirst();
     }
-
     public List<Member> findAll() {
         return new ArrayList<>(store.values());
-    }
-
-    public void clearStore() {
-        store.clear();
     }
 }
