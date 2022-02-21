@@ -1,0 +1,14 @@
+
+“
+java:S1130"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(º™Ú78ø¢ê¦ñ/
+Q	java:S125"<This block of commented-out lines of code should be removed.(åá°…
+Q	java:S125-"<This block of commented-out lines of code should be removed.(ÕúÙÖ
+S	java:S106."9Replace this use of System.out or System.err by a logger.(ÿ÷ðÉÿÿÿÿÿ
+N	java:S1062"9Replace this use of System.out or System.err by a logger.(èˆÜå
+Q	java:S1255"<This block of commented-out lines of code should be removed.(Î±Ô”
+V	java:S125E"<This block of commented-out lines of code should be removed.(Ë‚ÃÅüÿÿÿÿ
+F
+java:S1068
+"0Remove this unused "DEFAULT_RATE" private field.(ÆÎ¹£
+>
+java:S1604"(Make this anonymous inner class a lambda(¹ÎŸò

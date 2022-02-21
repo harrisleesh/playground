@@ -5,14 +5,14 @@ import java.util.List;
 
 public class Apple {
     private Double weight;
-    private String color;
+    private Color color;
 
     public Apple(Double weight) {
         this.weight = weight;
     }
 
     public static boolean isGreenApple(Apple apple) {
-        return apple.getColor().equals("GREEN");
+        return apple.getColor().equals(Color.GREEN);
     }
 
     public static boolean isHeavyApple(Apple apple) {
@@ -38,7 +38,7 @@ public class Apple {
         return weight;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 

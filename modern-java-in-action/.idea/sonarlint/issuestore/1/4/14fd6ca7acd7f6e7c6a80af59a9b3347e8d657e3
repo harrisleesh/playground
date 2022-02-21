@@ -1,4 +1,12 @@
 
-U	java:S106"9Replace this use of System.out or System.err by a logger.(á½º¾8˜‚‰ï/
-E
-java:S1604"(Make this anonymous inner class a lambda(©€¢8ö™„‰ï/
+V	java:S125"<This block of commented-out lines of code should be removed.(˜Øö´şÿÿÿÿ
+]	java:S125A"<This block of commented-out lines of code should be removed.(Öââ¨ûÿÿÿÿ8å¸êßğ/
+N	java:S106`"9Replace this use of System.out or System.err by a logger.(¢àóÄ
+]
+java:S1128";Remove this unused import 'java.util.function.IntSupplier'.(Ê–Œûøÿÿÿÿ8í¸êßğ/
+Y
+java:S1128"7Remove this unused import 'java.util.stream.IntStream'.(ÙÉ½Ÿùÿÿÿÿ8î¸êßğ/
+J
+java:S1128"4Remove this unused import 'java.util.stream.Stream'.(ó÷”
+G
+java:S1128"1Remove this unused import 'java.util.Comparator'.(å¬ö·

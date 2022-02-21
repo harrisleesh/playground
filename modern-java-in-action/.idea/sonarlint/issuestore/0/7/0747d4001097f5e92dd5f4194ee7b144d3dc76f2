@@ -1,0 +1,17 @@
+
+M
+java:S1854"7Remove this useless assignment to local variable "age".(³¯òá
+T
+java:S1854"9Remove this useless assignment to local variable "lists".(ãÑÁ¥ýÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(×þ„ 
+E
+java:S1481"*Remove this unused "lists" local variable.(ãÑÁ¥ýÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(“åÊùÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(Ã´­ìøÿÿÿÿ
+>
+java:S1481"(Remove this unused "age" local variable.(³¯òá
+Q	java:S125"<This block of commented-out lines of code should be removed.(™ò¦—
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ÿª âúÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ôÖ»¡
+b
+java:S1192	"GDefine a constant instead of duplicating this literal "harris" 3 times.(úð†üÿÿÿÿ
