@@ -3,12 +3,12 @@ package com.example.jwtpractice.controller;
 import com.example.jwtpractice.domain.User;
 import com.example.jwtpractice.domain.UserRepository;
 import com.example.jwtpractice.jwt.JwtTokenProvider;
-import com.example.jwtpractice.service.CustomUserDetailsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor;
 
 import java.util.Collections;
 import java.util.Map;
