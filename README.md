@@ -9,5 +9,6 @@
 ## spring-core
 ## spring-basic
 ## spring-cloud
+## spring-kafka
 ## 알고리즘
 ## jpa
